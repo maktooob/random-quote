@@ -1,14 +1,19 @@
 const quote = document.getElementById("quote");
 const button = document.getElementById("btn");
+const author = document.getElementById("author");
 
-button.addEventListener("click", getQuote());
+
+
 
 
 function getQuote() {
-    fetch("http://quotable.io/random", {cache: "reload"})
+    fetch("http://quotable.io/random")
     .then(res => res.json())
     .then(data => {
         quote.innerHTML = `"${data.content}"`;
-        console.log(data.content)
+        author.innerHTML = `-- ${data.author}`;
+        
     })
 }
+
+button.addEventListener("click", () => getQuote());
