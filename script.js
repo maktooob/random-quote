@@ -3,7 +3,9 @@ const button = document.getElementById("btn");
 const author = document.getElementById("author");
 
 
-
+window.onload = function() {
+    getQuote();
+  };
 
 
 function getQuote() {
